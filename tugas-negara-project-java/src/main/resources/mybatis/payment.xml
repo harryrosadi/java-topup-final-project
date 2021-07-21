@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pascabayar">
+    <!--    Insert Product and customer bills   -->
+    <insert id="insert" parameterType="com.example.finalprojectproduct.model.Pascabayar">
+        INSERT INTO PASCABAYAR (PRODUCT_NAME, CUSTOMER_ID, PAKET_A, PAKET_B, PAKET_C)
+        VALUES (#{product_name}, #{customer_id}, #{paket_a}, #{paket_b}, #{paket_c});
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id() as id
+        </selectKey>
+    </insert>
+
+    <!--   DISPLAY PRODUCT BY NAME-->
+    <resultMap id="pasca" type="com.example.finalprojectproduct.model.Pascabayar">
+        <result property="id" column="ID"/>
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="paket_a" column="PAKET_A"/>
+        <result property="paket_b" column="PAKET_B"/>
+        <result property="paket_c" column="PAKET_C"/>
+    </resultMap>
+    <!--DISPLAY PRODUCT BY NAME-->
+
+    <select id="view-product" parameterType="java.lang.String" resultMap="pasca">
+        SELECT * from PASCABAYAR where product_name = #{product_name};
+    </select>
+
+    <resultMap id="result" type="com.example.finalprojectproduct.model.Pascabayar">
+        <result property="id" column="ID"/>
+        <!--        <result property="customer_id" column="CUSTOMER_ID"/>-->
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="paket_a" column="PAKET_A"/>
+        <result property="paket_b" column="PAKET_B"/>
+        <result property="paket_c" column="PAKET_C"/>
+    </resultMap>
+
+    <!--    DISPLAY ALL-->
+    <select id="getAll" resultMap="result">
+        SELECT * FROM PASCABAYAR;
+    </select>
+
+</mapper>

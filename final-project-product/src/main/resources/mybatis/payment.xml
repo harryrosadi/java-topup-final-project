@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="payment">
+    <!--    Insert Product and customer bills   -->
+    <insert id="insert" parameterType="com.example.finalprojectproduct.model.Payment">
+        INSERT INTO PAYMENT (ORDER_ID, PRODUCT_NAME, PAYMENT_METHOD,  PACKET, PRICE, STATUS)
+        VALUES (#{order_id}, #{product_name}, #{payment_method},  #{packet}, #{price}, #{status});
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id() as id
+        </selectKey>
+    </insert>
+
+    <!--   DISPLAY PRODUCT BY NAME-->
+    <resultMap id="pasca" type="com.example.finalprojectproduct.model.Payment">
+        <result property="id" column="ID"/>
+        <result property="order_id" column="ORDER_ID"/>
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="payment_method" column="PAYMENT_METHOD"/>
+        <result property="packet" column="PACKET"/>
+        <result property="price" column="PRICE"/>
+        <result property="status" column="STATUS"/>
+    </resultMap>
+
+    <!--DISPLAY PRODUCT BY NAME-->
+    <select id="view-product" parameterType="String" resultMap="pasca">
+        SELECT * from PAYMENT where product_name = #{product_name};
+    </select>
+
+    <select id="check-order-id" parameterType="int" resultMap="pasca">
+        SELECT * from PAYMENT where order_id = #{order_id};
+    </select>
+
+    <select id="delete-order-id" parameterType="int">
+        DELETE from PAYMENT where order_id = #{order_id};
+    </select>
+
+    <resultMap id="result" type="com.example.finalprojectproduct.model.Payment">
+        <result property="id" column="ID"/>
+        <result property="order_id" column="ORDER_ID"/>
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="payment_method" column="PAYMENT_METHOD"/>
+        <result property="packet" column="PACKET"/>
+        <result property="price" column="PRICE"/>
+    </resultMap>
+
+    <!--    DISPLAY ALL-->
+    <select id="getAll" resultMap="result">
+        SELECT * FROM PAYMENT;
+    </select>
+
+</mapper>

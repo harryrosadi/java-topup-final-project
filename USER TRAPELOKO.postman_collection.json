@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "47caf53f-d49c-48b2-b553-7f4eb4680819",
+		"name": "USER TRAPELOKO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\"    : \"yooooo\",\r\n    \"email\"  : \"yo@go.co\",\r\n    \"password\"   : \"halo\"\r\n\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"joko@go.co\",\r\n    \"password\":\"as12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"joko@go.co\",\r\n    \"password\":\"asd1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FORGOT PASSWORD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/forgot-password?email=karyo@go.co",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"forgot-password"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "karyo@go.co"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RESET PASSWORD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "PASCABAYAR ALL PRODUCT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiam9rb0Bnby5jbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MjU4ODgxMTIsImV4cCI6MTYyNTg4ODcxMn0.vTF5UglrZy42LylCBnEsHjqlJH9uaZ6hKvbw4Fw5H_QefgOMYI6PiRLGQG24pE1BhtDK9masNIgukIHMuUfrng",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/pascabayar/allproduct",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"pascabayar",
+						"allproduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PASCABAYAR PRODUCT NAME",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoia2FyeW9AZ28uY28iLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjI1ODkyMjg3LCJleHAiOjE2MjU4OTI4ODd9.hpSVl3bX0RutGPeYA6PRCXXaSYEQFd3kUPKrisEdaQ9cCyuZ05LHka7ctxnywrox_XdnvrWBlvXbtOvKsxCT7Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/pascabayar/indiavision",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"pascabayar",
+						"indiavision"
+					],
+					"query": [
+						{
+							"key": "au",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRABAYAR ALL PRODUCT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiam9rb0Bnby5jbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MjU4ODgxMTIsImV4cCI6MTYyNTg4ODcxMn0.vTF5UglrZy42LylCBnEsHjqlJH9uaZ6hKvbw4Fw5H_QefgOMYI6PiRLGQG24pE1BhtDK9masNIgukIHMuUfrng",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/prabayar/allproduct",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"prabayar",
+						"allproduct"
+					],
+					"query": [
+						{
+							"key": "aut",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRABAYAR PRODUCT NAME",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiam9rb0Bnby5jbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MjU4ODgxMTIsImV4cCI6MTYyNTg4ODcxMn0.vTF5UglrZy42LylCBnEsHjqlJH9uaZ6hKvbw4Fw5H_QefgOMYI6PiRLGQG24pE1BhtDK9masNIgukIHMuUfrng",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/prabayar/orentipi",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"prabayar",
+						"orentipi"
+					],
+					"query": [
+						{
+							"key": "au",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDER PRODUCT PASCABAYAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiam9rb0Bnby5jbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MjYwMjIzMDEsImV4cCI6MTYyNjAyMjkwMX0.GQaPPuUDplaYntk-wIydQ-dgAZ1gihSGt5CcmoPG6m_ATAC0HYCQ98BwmJGefyy5Fu2TiCWM516Mkj8UHIIynA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\" : 11295550,\r\n    \"product_name\": \"indiavision\",\r\n    \"packet\": \"2 bulan\",\r\n    \"price\": 700,\r\n    \"payment_method\" : \"pascabayar\",\r\n    \"status\" : \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/billing/pascabayar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"billing",
+						"pascabayar"
+					],
+					"query": [
+						{
+							"key": "aut",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDER PRODUCT PRABAYAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiam9rb0Bnby5jbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MjU4ODgxMTIsImV4cCI6MTYyNTg4ODcxMn0.vTF5UglrZy42LylCBnEsHjqlJH9uaZ6hKvbw4Fw5H_QefgOMYI6PiRLGQG24pE1BhtDK9masNIgukIHMuUfrng",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\" : 118,\r\n    \"product_name\": \"netplik\",\r\n    \"packet\": \"3 bulan\",\r\n    \"price\": 1000,\r\n    \"payment_method\" : \"pascabayar\",\r\n    \"status\" : \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/billing/prabayar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"billing",
+						"prabayar"
+					],
+					"query": [
+						{
+							"key": "aut",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CHECK CUSTOMER BILLING",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoia2FyeW9AZ28uY28iLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjI1ODkyMjg3LCJleHAiOjE2MjU4OTI4ODd9.hpSVl3bX0RutGPeYA6PRCXXaSYEQFd3kUPKrisEdaQ9cCyuZ05LHka7ctxnywrox_XdnvrWBlvXbtOvKsxCT7Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/billing/customer/110",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"billing",
+						"customer",
+						"110"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BILLING PAYMENT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiam9rb0Bnby5jbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MjU4ODgxMTIsImV4cCI6MTYyNTg4ODcxMn0.vTF5UglrZy42LylCBnEsHjqlJH9uaZ6hKvbw4Fw5H_QefgOMYI6PiRLGQG24pE1BhtDK9masNIgukIHMuUfrng",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer_id\": 111,\r\n    \"month\" : \"juni\",\r\n    \"status\": \"on\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/merchant/billing/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"merchant",
+						"billing",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

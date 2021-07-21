@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="customer">
+
+    <!--    Insert Product and customer bills   -->
+    <insert id="insert" parameterType="com.example.finalprojectproduct.model.CustomerData">
+        INSERT INTO CUSTOMER (CUSTOMER_ID, NAME, EMAIL)
+        VALUES (#{customer_id}, #{name}, #{email});
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id() as id
+        </selectKey>
+    </insert>
+
+
+    <resultMap id="status" type="com.example.finalprojectproduct.model.CustomerData">
+        <result property="id" column="ID"/>
+        <result property="name" column="NAME"/>
+        <result property="email" column="EMAIL"/>
+    </resultMap>
+
+    <select id="getall" resultMap="status">
+        SELECT * from CUSTOMER;
+    </select>
+
+
+</mapper>

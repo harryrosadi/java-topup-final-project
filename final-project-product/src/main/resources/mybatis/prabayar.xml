@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="prabayar">
+    <!--    Insert Product and customer bills   -->
+    <insert id="insert" parameterType="com.example.finalprojectproduct.model.Prabayar">
+        INSERT INTO PRABAYAR (PRODUCT_NAME, PAKET_A, HARGA_PAKET_A,  PAKET_B, HARGA_PAKET_B, PAKET_C, HARGA_PAKET_C)
+        VALUES (#{product_name}, #{paket_a}, #{harga_paket_a},  #{paket_b}, #{harga_paket_b}, #{paket_c}, #{harga_paket_c});
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id() as id
+        </selectKey>
+    </insert>
+
+    <!--   DISPLAY PRODUCT BY NAME-->
+    <resultMap id="pra" type="com.example.finalprojectproduct.model.Prabayar">
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="paket_a" column="PAKET_A"/>
+        <result property="harga_paket_a" column="HARGA_PAKET_A"/>
+        <result property="paket_b" column="PAKET_B"/>
+        <result property="harga_paket_b" column="HARGA_PAKET_B"/>
+        <result property="paket_c" column="PAKET_C"/>
+        <result property="harga_paket_c" column="HARGA_PAKET_C"/>
+    </resultMap>
+
+    <!--DISPLAY PRODUCT BY NAME-->
+    <select id="view-product" parameterType="java.lang.String" resultMap="pra">
+        SELECT * from PRABAYAR where product_name = #{product_name};
+    </select>
+
+<!--    DISPLAY ALL    -->
+    <resultMap id="result" type="com.example.finalprojectproduct.model.Prabayar">
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="paket_a" column="PAKET_A"/>
+        <result property="harga_paket_a" column="HARGA_PAKET_A"/>
+        <result property="paket_b" column="PAKET_B"/>
+        <result property="harga_paket_b" column="HARGA_PAKET_B"/>
+        <result property="paket_c" column="PAKET_C"/>
+        <result property="harga_paket_c" column="HARGA_PAKET_C"/>
+    </resultMap>
+
+    <!--    DISPLAY ALL-->
+    <select id="getAll" resultMap="result">
+        SELECT * FROM PRABAYAR;
+    </select>
+
+</mapper>

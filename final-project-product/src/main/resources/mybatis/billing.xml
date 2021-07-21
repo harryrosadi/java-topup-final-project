@@ -1,0 +1,58 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="billing">
+    <!--    Insert Product and customer bills   -->
+    <insert id="insert" parameterType="com.example.finalprojectproduct.model.Billing">
+        INSERT INTO BILLING (CUSTOMER_ID, PRODUCT_NAME, MONTH, YEAR, BILLING, STATUS)
+        VALUES (#{customer_id}, #{product_name}, #{month}, #{year}, #{billing}, #{status});
+<!--        <selectKey keyProperty="customer_id" resultType="int" order="AFTER">-->
+<!--            select last_insert_id() as customer_id-->
+<!--        </selectKey>-->
+    </insert>
+
+    <!--   DISPLAY BILLING BY CUSTOMER ID-->
+    <resultMap id="result" type="com.example.finalprojectproduct.model.Billing">
+<!--        <result property="id" column="ID"/>-->
+        <result property="customer_id" column="CUSTOMER_ID"/>
+        <result property="name" column="NAME"/>
+        <result property="email" column="EMAIL"/>
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="month" column="MONTH"/>
+        <result property="year" column="YEAR"/>
+        <result property="billing" column="BILLING"/>
+        <result property="status" column="STATUS"/>
+    </resultMap>
+
+    <!--DISPLAY BILLING BY CUSTOMER ID WHERE EXPIRED-->
+    <select id="customer-billing"  resultMap="result">
+        SELECT CUSTOMER.*, BILLING.* FROM CUSTOMER
+        INNER JOIN BILLING ON CUSTOMER.CUSTOMER_ID = BILLING.CUSTOMER_ID AND CUSTOMER.CUSTOMER_ID = #{customer_id}
+        where status = "expired";
+    </select>
+
+    <resultMap id="status" type="com.example.finalprojectproduct.model.Billing">
+        <result property="customer_id" column="CUSTOMER_ID"/>
+        <result property="product_name" column="PRODUCT_NAME"/>
+        <result property="month" column="MONTH"/>
+        <result property="year" column="YEAR"/>
+        <result property="billing" column="BILLING"/>
+        <result property="status" column="STATUS"/>
+    </resultMap>
+
+    <update id = "update-status" parameterType = "com.example.finalprojectproduct.model.Billing">
+        UPDATE BILLING SET status = #{status} WHERE customer_id = #{customer_id} AND month = #{month};
+    </update>
+
+
+    <!--    DISPLAY ALL STATUS ALL -->
+    <select id="billing-status" resultMap="status">
+        SELECT * from BILLING where status = #{status};
+    </select>
+
+    <select id="getAll" resultMap="status">
+        SELECT * from BILLING;
+    </select>
+
+
+</mapper>
